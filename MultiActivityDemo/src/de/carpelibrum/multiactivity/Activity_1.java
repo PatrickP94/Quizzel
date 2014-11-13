@@ -25,11 +25,11 @@ private Button timemode;
 
 	public void onClick(View v) {
 		
-		if(v==normalmode){
+		if(v == normalmode){
 			Intent intent = new Intent(this, Normalquiz.class);
 			startActivity(intent);
 		}
-		else if(v==timemode){
+		else if(v == timemode){
 			Intent intent = new Intent (this, Timequiz.class);
 			startActivity(intent);
 		}

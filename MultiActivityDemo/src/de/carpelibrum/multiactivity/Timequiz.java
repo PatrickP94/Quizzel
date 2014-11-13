@@ -25,7 +25,7 @@ public class Timequiz extends Activity implements OnClickListener {
     private OnClickListener btnListener = new OnClickListener(){
     	public void onClick(View v){
     		String text="";
-    		if (progress1.getProgress()!=progress1.getMax()){
+    		if (progress1.getProgress()>0){
     		if (v==btnA){
     			text="Falsche Antwort";
     			btnD.setBackgroundColor(Color.GREEN);
@@ -47,16 +47,17 @@ public class Timequiz extends Activity implements OnClickListener {
     		if (v==btnD) {
     			text="Richtige Antwort";
     			btnD.setBackgroundColor(Color.GREEN);
-    			zähler=zähler+1;
-    			
+    			zähler=zähler+1; 			
     		}
     		
-    		progress1.setProgress(progress1.getProgress()+1);
-    		tview1.setText("Gespielte Spiele: "+progress1.getProgress()+" / "+progress1.getMax());
+    		progress1.setProgress(progress1.getProgress()-1);
+    		tview1.setText("Verbleibende Zeit "+progress1.getProgress());
     		Toast einToast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
     		einToast.show();
     	}
     	else{
+    		progress1.setBackgroundColor(Color.RED);
+    		tview1.setText("Time is Over");
     		text="Richtig beantwortete Fragen: "+zähler;
     		Toast einToast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
     		einToast.show();
@@ -67,7 +68,7 @@ public class Timequiz extends Activity implements OnClickListener {
     
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.normalquiz);
+        setContentView(R.layout.timequiz);
         
        btnA =(Button) findViewById(R.id.antwortA);
        btnA.setOnClickListener(btnListener);

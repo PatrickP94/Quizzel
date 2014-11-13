@@ -18,7 +18,6 @@ public final class R {
         public static final int antwortB=0x7f050003;
         public static final int antwortC=0x7f050004;
         public static final int antwortD=0x7f050005;
-        public static final int button1=0x7f05000d;
         public static final int categorymode=0x7f05000c;
         public static final int frage=0x7f050001;
         public static final int friendmode=0x7f05000b;
