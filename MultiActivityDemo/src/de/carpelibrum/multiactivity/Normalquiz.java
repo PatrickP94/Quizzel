@@ -10,7 +10,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity_2 extends Activity implements OnClickListener {
+public class Normalquiz extends Activity implements OnClickListener {
 
     private Button btnA;
     private Button btnB;

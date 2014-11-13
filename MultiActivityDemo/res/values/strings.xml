@@ -5,4 +5,5 @@
     <string name="telefonFeld">Taschenrechner</string>
     <string name="NormalModeProgressBar">Gespielte Spiele</string>
     <string name="Highscore">Sie haben noch nicht gespielt</string>
+    <string name="TimeModeProgressBar">Verbleibende Zeit</string>
 </resources>

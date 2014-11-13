@@ -14,14 +14,17 @@ public class Activity_1 extends Activity implements OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.playmode);
-        Button activity2Button  = (Button) this.findViewById(R.id.normalmode);
-        activity2Button.setOnClickListener(this);
+        //Normalmodus
+        Button normalmode  = (Button) this.findViewById(R.id.normalmode);
+        normalmode.setOnClickListener(this);
+        //Timemodus
+        Button timemode  = (Button) this.findViewById(R.id.timemode);
+        timemode.setOnClickListener(this);
     }
 
 	public void onClick(View v) {
 
-		//  Activity 2 starten
-		Intent intent = new Intent(this, Activity_2.class);
+		Intent intent = new Intent(this, Normalquiz.class);
 		this.startActivity(intent);
 	}
 

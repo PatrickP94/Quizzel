@@ -21,7 +21,7 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="de.carpelibrum.multiactivity.Activity_2">
+			android:name="de.carpelibrum.multiactivity.Normalquiz">
 		</activity>
 	</application>
 </manifest>
