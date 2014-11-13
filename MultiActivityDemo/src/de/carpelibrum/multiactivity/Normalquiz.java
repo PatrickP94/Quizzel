@@ -1,6 +1,7 @@
 package de.carpelibrum.multiactivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -59,7 +60,7 @@ public class Normalquiz extends Activity implements OnClickListener {
     		text="Richtig beantwortete Fragen: "+zähler;
     		Toast einToast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
     		einToast.show();
-    	}
+    		}
     	}
     
     };
