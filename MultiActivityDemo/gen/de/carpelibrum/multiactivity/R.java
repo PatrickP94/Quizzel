@@ -32,11 +32,13 @@ public final class R {
         public static final int highscore=0x7f030000;
         public static final int normalquiz=0x7f030001;
         public static final int playmode=0x7f030002;
-        public static final int timequiz=0x7f030003;
+        public static final int survivalquiz=0x7f030003;
+        public static final int timequiz=0x7f030004;
     }
     public static final class string {
         public static final int Highscore=0x7f040005;
         public static final int NormalModeProgressBar=0x7f040004;
+        public static final int SurvivalModeProgressBar=0x7f040007;
         public static final int TimeModeProgressBar=0x7f040006;
         public static final int app_name=0x7f040000;
         public static final int geheZuActivity1=0x7f040002;

@@ -24,5 +24,6 @@
 			android:name="de.carpelibrum.multiactivity.Normalquiz">
 		</activity>
 		<activity android:name="de.carpelibrum.multiactivity.Timequiz"></activity>
+		<activity android:name="de.carpelibrum.multiactivity.SurvivalQuiz"></activity>
 	</application>
 </manifest>

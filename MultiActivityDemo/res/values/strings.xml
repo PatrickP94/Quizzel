@@ -1,9 +1,10 @@
 <resources>
-    <string name="app_name">MultiactivityApp</string>
+    <string name="app_name">Qu!zzel</string>
     <string name="geheZuActivity2">Gehe zu Activity 2</string>
     <string name="geheZuActivity1">Gehe zu Activity 1</string>
     <string name="telefonFeld">Taschenrechner</string>
     <string name="NormalModeProgressBar">Gespielte Spiele</string>
     <string name="Highscore">Sie haben noch nicht gespielt</string>
     <string name="TimeModeProgressBar">Verbleibende Zeit</string>
+    <string name="SurvivalModeProgressBar">Sie haben noch alle Leben</string>
 </resources>

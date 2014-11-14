@@ -11,6 +11,7 @@ import android.widget.Button;
 public class Activity_1 extends Activity implements OnClickListener {
 private Button normalmode;
 private Button timemode;
+private Button survivalmode;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +22,9 @@ private Button timemode;
         //Timemodus
         timemode  = (Button) this.findViewById(R.id.timemode);
         timemode.setOnClickListener(this);
+        //Überlebensmodus
+        survivalmode = (Button) this.findViewById(R.id.lifemode);
+        survivalmode.setOnClickListener(this);
     }
 
 	public void onClick(View v) {
@@ -33,7 +37,10 @@ private Button timemode;
 			Intent intent = new Intent (this, Timequiz.class);
 			startActivity(intent);
 		}
-		
-    }
+		else if(v == survivalmode){
+			Intent intent = new Intent (this, SurvivalQuiz.class);
+			startActivity(intent);
+		}
 	
+	}
 }
