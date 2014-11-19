@@ -1,5 +1,8 @@
 package de.carpelibrum.multiactivity;
 
+import de.carpelibrum.multiactivity.R;
+import de.carpelibrum.multiactivity.R.id;
+import de.carpelibrum.multiactivity.R.layout;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
