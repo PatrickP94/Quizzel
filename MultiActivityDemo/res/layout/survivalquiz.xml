@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="20dp" >
+    <TextView
+        android:id="@+id/frage"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="20dp"
+        android:text="Wie heißt die Quiz-App, die sie gerade spielen?"
+        android:textStyle="bold" >
+    </TextView>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/antwortA"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Puzzle" >
+            </Button>
+
+            <Button
+                android:id="@+id/antwortB"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Qu!z" >
+            </Button>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/antwortC"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Q!zz" >
+            </Button>
+
+            <Button
+                android:id="@+id/antwortD"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Qu!zzel" >
+            </Button>
+        </TableRow>
+    </TableLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:max="3"
+            android:progress="10" >
+        </ProgressBar>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/SurvivalModeProgressBar"
+            android:textColor="#AAAAAA" >
+        </TextView>
+    </FrameLayout>
+
+</LinearLayout>

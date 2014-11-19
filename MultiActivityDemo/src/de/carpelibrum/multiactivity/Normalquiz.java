@@ -1,6 +1,7 @@
 package de.carpelibrum.multiactivity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -25,7 +26,7 @@ public class Normalquiz extends Activity implements OnClickListener {
     private OnClickListener btnListener = new OnClickListener(){
     	public void onClick(View v){
     		String text="";
-    		if (progress1.getProgress()!=progress1.getMax()){
+    		if (progress1.getProgress()<progress1.getMax()){
     		if (v==btnA){
     			text="Falsche Antwort";
     			btnD.setBackgroundColor(Color.GREEN);
@@ -59,8 +60,8 @@ public class Normalquiz extends Activity implements OnClickListener {
     	else{
     		text="Richtig beantwortete Fragen: "+zähler;
     		Toast einToast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
-    		einToast.show();
-    		}
+    		einToast.show();   		
+    	}
     	}
     
     };
