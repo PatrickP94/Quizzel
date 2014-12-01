@@ -27,33 +27,40 @@
                 android:id="@+id/antwortA"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="Puzzle" >
+                android:text="Puzzle"
+                android:background="#444444" >
             </Button>
 
             <Button
                 android:id="@+id/antwortB"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="Qu!z" >
+                android:text="Qu!z"
+                android:background="#444444" 
+                android:layout_marginLeft="10sp">
             </Button>
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp" >
 
             <Button
                 android:id="@+id/antwortC"
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Q!zz" >
+                android:text="Q!zz" 
+                android:background="#444444">
             </Button>
 
             <Button
                 android:id="@+id/antwortD"
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Qu!zzel" >
+                android:layout_height="match_parent"
+                android:text="Qu!zzel"
+                android:background="#444444"
+                android:layout_marginLeft="10sp" >
             </Button>
         </TableRow>
     </TableLayout>

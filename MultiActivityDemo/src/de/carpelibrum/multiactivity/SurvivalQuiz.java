@@ -4,9 +4,12 @@ import de.carpelibrum.multiactivity.R;
 import de.carpelibrum.multiactivity.R.id;
 import de.carpelibrum.multiactivity.R.layout;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.sax.EndElementListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -15,7 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class SurvivalQuiz extends Activity implements OnClickListener {
-
+	Spiellogik spiel;
     private Button btnA;
     private Button btnB;
     private Button btnC;
@@ -23,73 +26,69 @@ public class SurvivalQuiz extends Activity implements OnClickListener {
     private ProgressBar progress1;
     private TextView tview1;
     private TextView tview2;
-    int zähler = 0;
-    
-    private OnClickListener btnListener = new OnClickListener(){
+    int leben = 3;
+    int zähler =0;
+    private View mainLayout; 
+	MediaPlayer mediaplayer = new MediaPlayer();
+	
     	public void onClick(View v){
-    		String text="";
-    		if (progress1.getProgress()>0){
-    		if (v==btnA){
-    			text="Falsche Antwort";
-    			btnD.setBackgroundColor(Color.GREEN);
-    			btnA.setBackgroundColor(Color.RED);
-    			progress1.setProgress(progress1.getProgress()-1);
-    		}
-    		if (v==btnB){
-    			text="Falsche Antwort";
-    			btnD.setBackgroundColor(Color.GREEN);
-    			btnB.setBackgroundColor(Color.RED);
-    			progress1.setProgress(progress1.getProgress()-1);
-    		}
-    		if (v==btnC){
-    			text="Falsche Antwort";
-    			btnD.setBackgroundColor(Color.GREEN);
-    			btnC.setBackgroundColor(Color.RED);
-    			progress1.setProgress(progress1.getProgress()-1);
-
-    		}
-    		if (v==btnD) {
-    			text="Richtige Antwort";
-    			btnD.setBackgroundColor(Color.GREEN);
-    			zähler=zähler+1; 			
-    		}
+    		int id = v.getId();
+    		int stufe = spiel.gewinnstufe;
+    		zähler++;
     		
-    		
-    		tview1.setText("Sie haben nur noch "+progress1.getProgress()+" Leben");
-    		Toast einToast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
-    		einToast.show();
-    	}
-    	else{
-    		progress1.setBackgroundColor(Color.RED);
-    		tview1.setText("Du hast keine Leben mehr! GAME OVER");
-    		text="Richtig beantwortete Fragen: "+zähler;
-    		Toast einToast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
-    		einToast.show();
+    		if (id == R.id.antwortA){
+    			spiel.auswerten(1, this,leben);
     		}
-    	}
-    
-    };
+    		else if (id == R.id.antwortB){
+    			spiel.auswerten(2,this,leben);
+    		}
+    		else if (id == R.id.antwortC){
+    			spiel.auswerten(3,this,leben);
+    		}
+    		else if (id == R.id.antwortD){
+    			spiel.auswerten(4,this,leben);
+    		}
+    		if(stufe==spiel.gewinnstufe){
+    			leben=leben-1;
+    			tview2.setText(" "+leben);
+    		}
+    		if(leben == 0){
+				btnA.setEnabled(false);
+				btnB.setEnabled(false); //damit keiner einen Button drückt bevor Frage kommt
+				btnC.setEnabled(false);
+				btnD.setEnabled(false);
+				String str = "Du hast keine Leben mehr. Game Over. Gespielte Fragen "+zähler;
+				Toast.makeText(this, str, Toast.LENGTH_LONG).show();
+				mainLayout.setBackgroundResource(R.drawable.skull);
+				mediaplayer  = MediaPlayer.create(this, R.raw.scream);
+				mediaplayer.start();
+    		}
+    		    			
+    }
+    	
     
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.survivalquiz);
         
+        spiel = new Spiellogik();
+        
        btnA =(Button) findViewById(R.id.antwortA);
-       btnA.setOnClickListener(btnListener);
+       btnA.setOnClickListener(this);
        btnB =(Button) findViewById(R.id.antwortB);
-       btnB.setOnClickListener(btnListener);
+       btnB.setOnClickListener(this);
        btnC =(Button) findViewById(R.id.antwortC);
-       btnC.setOnClickListener(btnListener);
+       btnC.setOnClickListener(this);
        btnD =(Button) findViewById(R.id.antwortD);
-       btnD.setOnClickListener(btnListener);
+       btnD.setOnClickListener(this);
        progress1 =(ProgressBar) findViewById(R.id.progressBar1);
        tview1 = (TextView) findViewById(R.id.textView2);
-       tview2 = (TextView) findViewById(R.id.high);
+       tview2 = (TextView) findViewById(R.id.leben);
+       mainLayout = (View) findViewById(R.id.SurvivalQuizView); 
+       
+       spiel.fragen[spiel.aktFrage].anzeigen(this);
     }
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 
 	

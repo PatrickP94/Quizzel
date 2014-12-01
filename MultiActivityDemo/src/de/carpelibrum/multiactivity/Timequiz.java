@@ -1,11 +1,7 @@
 package de.carpelibrum.multiactivity;
 
 import de.carpelibrum.multiactivity.R;
-import de.carpelibrum.multiactivity.R.id;
-import de.carpelibrum.multiactivity.R.layout;
 import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Timequiz extends Activity implements OnClickListener {
-
+	Spiellogik spiel;
     private Button btnA;
     private Button btnB;
     private Button btnC;
@@ -24,71 +20,48 @@ public class Timequiz extends Activity implements OnClickListener {
     private TextView tview1;
     private TextView tview2;
     int zähler = 0;
+    int leben =-1;
     
-    private OnClickListener btnListener = new OnClickListener(){
     	public void onClick(View v){
-    		String text="";
-    		if (progress1.getProgress()>0){
-    		if (v==btnA){
-    			text="Falsche Antwort";
-    			btnD.setBackgroundColor(Color.GREEN);
-    			btnA.setBackgroundColor(Color.RED);
-    			
+    		int id = v.getId();
+    		
+    		if (id == R.id.antwortA){
+    			spiel.auswerten(1, this,leben);
     		}
-    		if (v==btnB){
-    			text="Falsche Antwort";
-    			btnD.setBackgroundColor(Color.GREEN);
-    			btnB.setBackgroundColor(Color.RED);
-
+    		else if (id == R.id.antwortB){
+    			spiel.auswerten(2,this,leben);
     		}
-    		if (v==btnC){
-    			text="Falsche Antwort";
-    			btnD.setBackgroundColor(Color.GREEN);
-    			btnC.setBackgroundColor(Color.RED);
-
+    		else if (id == R.id.antwortC){
+    			spiel.auswerten(1, this,leben);
     		}
-    		if (v==btnD) {
-    			text="Richtige Antwort";
-    			btnD.setBackgroundColor(Color.GREEN);
-    			zähler=zähler+1; 			
+    		else if (id == R.id.antwortD){
+    			spiel.auswerten(1, this,leben);
     		}
     		
-    		progress1.setProgress(progress1.getProgress()-1);
-    		tview1.setText("Verbleibende Zeit "+progress1.getProgress());
-    		Toast einToast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
-    		einToast.show();
-    	}
-    	else{
-    		progress1.setBackgroundColor(Color.RED);
-    		tview1.setText("Time is Over");
-    		text="Richtig beantwortete Fragen: "+zähler;
-    		Toast einToast = Toast.makeText(v.getContext(), text, Toast.LENGTH_SHORT);
-    		einToast.show();
-    		}
-    	}
-    
-    };
+    		    			
+    }
+    	
     
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.timequiz);
         
+        spiel = new Spiellogik();
+        
        btnA =(Button) findViewById(R.id.antwortA);
-       btnA.setOnClickListener(btnListener);
+       btnA.setOnClickListener(this);
        btnB =(Button) findViewById(R.id.antwortB);
-       btnB.setOnClickListener(btnListener);
+       btnB.setOnClickListener(this);
        btnC =(Button) findViewById(R.id.antwortC);
-       btnC.setOnClickListener(btnListener);
+       btnC.setOnClickListener(this);
        btnD =(Button) findViewById(R.id.antwortD);
-       btnD.setOnClickListener(btnListener);
+       btnD.setOnClickListener(this);
        progress1 =(ProgressBar) findViewById(R.id.progressBar1);
        tview1 = (TextView) findViewById(R.id.textView2);
-       tview2 = (TextView) findViewById(R.id.high);
+       
+       spiel.fragen[spiel.aktFrage].anzeigen(this);
     }
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 
 	

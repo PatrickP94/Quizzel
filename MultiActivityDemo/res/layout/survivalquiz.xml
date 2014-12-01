@@ -4,13 +4,29 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
+    android:background="@drawable/background"
+    android:id="@+id/SurvivalQuizView"
     android:padding="20dp" >
+
+    <TextView
+        android:id="@+id/leben"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Leben" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/star_big_off" />
+    
     <TextView
         android:id="@+id/frage"
         android:layout_width="match_parent"
-        android:layout_height="40sp"
+        android:layout_height="80sp"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="20dp"
+        android:textSize="18sp"
         android:text="Wie heißt die Quiz-App, die sie gerade spielen?"
         android:textStyle="bold" >
     </TextView>
@@ -26,60 +42,44 @@
             <Button
                 android:id="@+id/antwortA"
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Puzzle" >
+                android:layout_height="70sp"
+                android:text="Puzzle" 
+                android:background="#444444">
             </Button>
 
             <Button
                 android:id="@+id/antwortB"
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Qu!z" >
+                android:layout_height="70sp"
+                android:text="Qu!z"
+                android:background="#444444"
+                android:layout_marginLeft="10sp">
             </Button>
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content" 
+            android:layout_marginTop="10sp">
 
             <Button
                 android:id="@+id/antwortC"
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Q!zz" >
+                android:layout_height="70sp"
+                android:text="Q!zz" 
+                android:background="#444444">
             </Button>
 
             <Button
                 android:id="@+id/antwortD"
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Qu!zzel" >
+                android:layout_height="70sp"
+                android:text="Qu!zzel" 
+                android:background="#444444"
+                android:layout_marginLeft="10sp">
             </Button>
         </TableRow>
     </TableLayout>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <ProgressBar
-            android:id="@+id/progressBar1"
-            style="@android:style/Widget.ProgressBar.Horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="10dp"
-            android:max="3"
-            android:progress="10" >
-        </ProgressBar>
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/SurvivalModeProgressBar"
-            android:textColor="#AAAAAA" >
-        </TextView>
-    </FrameLayout>
 
 </LinearLayout>

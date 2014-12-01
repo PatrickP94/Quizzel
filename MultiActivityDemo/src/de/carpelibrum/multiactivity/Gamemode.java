@@ -6,15 +6,18 @@ import de.carpelibrum.multiactivity.R.id;
 import de.carpelibrum.multiactivity.R.layout;
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class Activity_1 extends Activity implements OnClickListener {
+public class Gamemode extends Activity implements OnClickListener {
 private Button normalmode;
 private Button timemode;
 private Button survivalmode;
+private Button helpus; 
+private Button highscore;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +31,12 @@ private Button survivalmode;
         //Überlebensmodus
         survivalmode = (Button) this.findViewById(R.id.lifemode);
         survivalmode.setOnClickListener(this);
+        //Helpus
+        helpus = (Button) this.findViewById(R.id.helpus);
+        helpus.setOnClickListener(this);
+        //Highscore
+        highscore = (Button) this.findViewById(R.id.highscore);
+        highscore.setOnClickListener(this);
     }
 
 	public void onClick(View v) {
@@ -43,6 +52,13 @@ private Button survivalmode;
 		else if(v == survivalmode){
 			Intent intent = new Intent (this, SurvivalQuiz.class);
 			startActivity(intent);
+		}
+		else if(v==helpus){
+			Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://goo.gl/forms/rPvX0twdfO"));
+			startActivity(browserIntent);
+		}
+		else if(v==highscore){
+			 setContentView(R.layout.highscore);
 		}
 	
 	}

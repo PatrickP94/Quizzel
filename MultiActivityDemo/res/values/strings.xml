@@ -5,6 +5,17 @@
     <string name="telefonFeld">Taschenrechner</string>
     <string name="NormalModeProgressBar">Gespielte Spiele</string>
     <string name="Highscore">Sie haben noch nicht gespielt</string>
+    <string name="Leben">3</string>
     <string name="TimeModeProgressBar">Verbleibende Zeit</string>
     <string name="SurvivalModeProgressBar">Sie haben noch alle Leben</string>
+    <string name="Highscore1">Fabian</string>
+    <string name="Highscore2">Patrick</string>
+    <string name="Highscore3">Patrick</string>
+    <string name="Highscore4">Fabian</string>
+    <string name="Highscore5">Jasmin</string>
+    <string name="Highscore6">Fabian</string>
+    <string name="Highscore7">Jasmin</string>
+    <string name="Highscore8">Jasmin</string>
+    <string name="Highscore9">Fabian</string>
+    <string name="Highscore10">Patrick</string>
 </resources>

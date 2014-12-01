@@ -2,17 +2,220 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/high"
+     <TextView
         android:layout_width="match_parent"
-        android:layout_height="40sp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="50dp"
-        android:text="@string/Highscore"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30sp"
+        android:text="Highscore"
+        android:textSize="16pt"
+        android:textStyle="bold" />
+     
+     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30sp"
+        android:text="Normales Spiel"
+        android:textSize="10pt"
+        android:textStyle="bold" />
+    
+   <TableLayout 
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content">
+   <TableRow >
+    <TextView
+        android:id="@+id/high1"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20sp"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="@string/Highscore1"
+        android:textStyle="bold" />
+    
+    <TextView
+        android:id="@+id/highpkt1"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20sp"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="10 Punkte"
+        android:textStyle="bold" />
+    
+	</TableRow>
+	
+   <TableRow >
+    <TextView
+        android:id="@+id/high2"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="@string/Highscore2"
+        android:textStyle="bold" />
+    
+    <TextView
+        android:id="@+id/highpkt2"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="10 Punkte"
+        android:textStyle="bold" />
+    </TableRow>
+    
+ 	<TableRow>
+        <TextView
+        android:id="@+id/high3"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="@string/Highscore3"
+        android:textStyle="bold" />
+        
+         <TextView
+        android:id="@+id/highpkt3"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="9 Punkte"
+        android:textStyle="bold" />
+        
+        
+        </TableRow>
+        
+ 	<TableRow >
+       <TextView
+        android:id="@+id/high4"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="@string/Highscore4"
+        android:textStyle="bold" />
+       
+      <TextView
+        android:id="@+id/highpkt4"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="9 Punkte"
+        android:textStyle="bold" />
+       
+     </TableRow>
+     
+ 	<TableRow>
+       <TextView
+        android:id="@+id/high5"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="@string/Highscore5"
+        android:textStyle="bold" />
+       
+       <TextView
+        android:id="@+id/highpkt5"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="8 Punkte"
+        android:textStyle="bold" />
+       
+    </TableRow>
+    
+ 	<TableRow>
+       <TextView
+        android:id="@+id/high6"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="@string/Highscore6"
+        android:textStyle="bold" />
+       
+       <TextView
+        android:id="@+id/highpkt6"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="7 Punkte"
+        android:textStyle="bold" />
+	</TableRow>
+	
+ 	
+ 	<TableRow >
+       <TextView
+        android:id="@+id/high7"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="@string/Highscore7"
+        android:textStyle="bold" />
+       
+       <TextView
+        android:id="@+id/highpkt7"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="5 Punkte"
+        android:textStyle="bold" />
+    </TableRow>    
+    
+ 	<TableRow>
+      <TextView
+        android:id="@+id/high8"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="@string/Highscore8"
+        android:textStyle="bold" />
+      
+       <TextView
+        android:id="@+id/highpkt8"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="4 Punkte"
+        android:textStyle="bold" />
+      
+     </TableRow>   
+     
+ 	<TableRow >
+      <TextView
+        android:id="@+id/high9"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="@string/Highscore9"
+        android:textStyle="bold" />
+      
+      <TextView
+        android:id="@+id/highpkt9"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="2 Punkte"
+        android:textStyle="bold" />
+   </TableRow>        
+   
+ 	<TableRow>
+      <TextView
+          android:id="@+id/high10"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginLeft="30sp"
+          android:text="@string/Highscore10"
+          android:textStyle="bold"/> 
+          
+      <TextView
+        android:id="@+id/highpkt10"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_marginLeft="30sp"
+        android:text="2 Punkte"
         android:textStyle="bold" >
-    </TextView>
-    
-    
+      </TextView>
+      
+      
+      </TableRow>
+      
+      </TableLayout>
 </LinearLayout>
